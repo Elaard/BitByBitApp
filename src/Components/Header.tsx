@@ -1,3 +1,5 @@
+import { Paths } from "../Paths";
+import NavbarLink from "./NavbarLink";
 
 const Header = () => {
   return <header className="header">
@@ -10,8 +12,9 @@ const Header = () => {
       </h1>
     </div>
     <div className="header__title">
-      made by bartłomiej czosnyka
+      stay up to date with cryptocurrencies
     </div>
+    <NavbarLink key="wallets" to={Paths.Wallets} title={"Wallets"} imageSource={"../icons/wallet-white.svg"} />
   </header>
 
 }
