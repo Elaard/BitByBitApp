@@ -5,9 +5,13 @@
 @import "base/typography";
 
 @import "components/buttons";
-@import "components/navbarLink";
+@import "components/navbar-link";
+@import "components/link-image";
+@import "components/link-text";
 
 @import "layout/navbar";
 @import "layout/header";
+@import "layout/layout";
+@import "layout/page-section";
 
 @import "pages/errorPage";

@@ -6,7 +6,15 @@
 
 .error-page-content {
   position: absolute;
-  top: 30%;
+  top: 25%;
   left: 50%;
   transform: translateX(-50%);
+  color: $color-white;
+  &__h1 {
+    font-size: 8rem;
+  }
+  &__message,
+  &__error {
+    font-size: 4rem;
+  }
 }

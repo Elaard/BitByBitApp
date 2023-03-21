@@ -1,0 +1,23 @@
+.navbar-link {
+  text-align: center;
+  border: 1px solid $color-white;
+  border-radius: 1rem;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.4);
+  transition: transform 0.2s;
+
+  &:hover {
+    border-color: $color-red-light;
+    background-color: $color-black-light;
+    transform: translateY(-0.3rem);
+    box-shadow: 1rem 1rem 1rem rgba(0, 0, 0, 1);
+  }
+  &:not(:first-child) {
+    margin-top: 1.5rem;
+  }
+  &__element {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 1rem 0rem;
+  }
+}

@@ -3,11 +3,15 @@ import Header from "./Header";
 import Navbar from "./Navbar";
 
 const Layout = () => {
-  return <>
+  return <div className="layout">
     <Header />
-    <Navbar />
-    <Outlet />
-  </>
+    <div className="layout__main-section">
+      <aside className="layout__aside">
+        <Navbar />
+      </aside>
+      <Outlet />
+    </div>
+  </div>
 }
 
 export default Layout;

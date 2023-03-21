@@ -1,36 +1,37 @@
 .header {
+  display: flex;
+  align-items: center;
+  height: 15vh;
+  margin-left: 8rem;
+  margin-top: 2rem;
   position: relative;
-  width: 100%;
-  height: 20vh;
 
   &__logo-box {
-    position: absolute;
-    top: 40%;
-    left: 5%;
-    transform: translateY(-50%);
+    width: 10rem;
   }
 
   &__logo {
-    width: 75px;
-    height: 75px;
+    width: 7rem;
+    height: 7rem;
   }
-
   &__text-box {
-    position: relative;
-    height: 100%;
+    width: 10rem;
+  }
+  &__title {
+    width: calc(100% - 48rem);
+    min-width: 20rem;
+    color: $color-white;
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    text-align: center;
   }
 }
 
 .heading-primary {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -40%);
   text-transform: uppercase;
-  text-align: center;
   margin: auto;
-  font-size: 4rem;
+  font-size: 1.6rem;
   color: $color-white;
   letter-spacing: 3px;
-  font-family: $font-family-lato;
 }
