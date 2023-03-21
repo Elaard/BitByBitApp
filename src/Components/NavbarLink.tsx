@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useIsLinkActive } from "../Utils/Hooks.ts/useIsLinkActive";
 import LinkImage from "./LinkImage";
 import LinkText from "./LinkText";
 
@@ -9,7 +10,11 @@ interface NavbarLinkProps {
 }
 
 const NavbarLink = ({ to, title, imageSource }: NavbarLinkProps) => {
-  return <li className="navbar-link">
+  const isActive = useIsLinkActive(to);
+
+  const linkClassName = isActive ? "navbar-link link-active" : "navbar-link";
+
+  return <li className={linkClassName}>
     <Link className="navbar-link__element" to={to}>
       <LinkImage src={imageSource} />
       <LinkText text={title} />

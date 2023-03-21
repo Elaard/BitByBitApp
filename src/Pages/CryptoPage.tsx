@@ -1,6 +1,6 @@
 
 const CryptoPage = () => {
-  return <div>supppadsfasdffasdfsadf</div>
+  return <div></div>
 }
 
 

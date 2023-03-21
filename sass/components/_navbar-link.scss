@@ -1,3 +1,10 @@
+@mixin link-active {
+  border-color: $color-red-light;
+  background-color: $color-black-light;
+  transform: translateY(-0.3rem);
+  box-shadow: 1rem 1rem 1rem rgba(0, 0, 0, 1);
+}
+
 .navbar-link {
   text-align: center;
   border: 1px solid $color-white;
@@ -6,10 +13,7 @@
   transition: transform 0.2s;
 
   &:hover {
-    border-color: $color-red-light;
-    background-color: $color-black-light;
-    transform: translateY(-0.3rem);
-    box-shadow: 1rem 1rem 1rem rgba(0, 0, 0, 1);
+    @include link-active;
   }
   &:not(:first-child) {
     margin-top: 1.5rem;
@@ -20,4 +24,8 @@
     align-items: center;
     padding: 1rem 0rem;
   }
+}
+
+.link-active {
+  @include link-active;
 }

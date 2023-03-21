@@ -12,12 +12,12 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       {
-        path: Paths.Wallet,
+        path: Paths.Wallets,
         element: <PageContainer children={<WalletPage />} />,
         errorElement: <ErrorPage />
       },
       {
-        path: Paths.Crypto,
+        path: Paths.Cryptos,
         element: <PageContainer children={<CryptoPage />} />,
         errorElement: <ErrorPage />,
       }
