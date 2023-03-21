@@ -1,0 +1,12 @@
+.error-page {
+  position: relative;
+  height: 100vh;
+  text-align: center;
+}
+
+.error-page-content {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+}
