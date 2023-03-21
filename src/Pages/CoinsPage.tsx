@@ -1,7 +1,7 @@
 
 const CoinsPage = () => {
   console.log("sp")
-  return <div>suppp</div>
+  return <div>supppadsfasdffasdfsadf</div>
 }
 
 

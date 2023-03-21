@@ -1,28 +1,34 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import CoinsPage from "./CoinsPage";
-import ErrorPage from "./ErrorPage";
-import Navbar from "./Navbar";
-import WalletPage from "./WalletPage";
+import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
+import CoinsPage from "./Pages/CoinsPage";
+import ErrorPage from "./Pages/ErrorPage";
+import WalletPage from "./Pages/WalletPage";
+import { Paths } from "./Paths";
+import Navbar from "./Components/Navbar";
+import Layout from "./Components/Layout";
 
 const router = createBrowserRouter([
   {
-    element: <Navbar />,
+    element: <Layout />,
     errorElement: <ErrorPage />,
     children: [
       {
-        path: '/',
+        path: Paths.Default,
         element: <WalletPage />,
+        errorElement: <ErrorPage />,
       },
       {
-        path: '/ranking',
+        path: Paths.Ranking,
         element: <CoinsPage />,
+        errorElement: <ErrorPage />,
       }
     ]
   }
 ]);
 
 function AppRouter() {
-  return <RouterProvider router={router} />
+  return <>
+    <RouterProvider router={router} />
+  </>
 }
 
 export default AppRouter;

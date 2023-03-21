@@ -1,6 +1,5 @@
 function WalletPage() {
-  return (<div>sup</div>
-  )
+  return <></>
 }
 
 export default WalletPage

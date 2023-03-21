@@ -2,9 +2,12 @@
 
 @import "base/base";
 @import "base/utilities";
+@import "base/typography";
 
 @import "components/buttons";
+@import "components/navbarLink";
 
 @import "layout/navbar";
+@import "layout/header";
 
 @import "pages/errorPage";

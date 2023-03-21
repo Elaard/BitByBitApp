@@ -1,5 +1,5 @@
 import { useRouteError } from "react-router-dom";
-import { useNavigationReturn } from "./Utils/Hooks.ts/useNavigationReturn";
+import { useNavigationReturn } from "../Utils/Hooks.ts/useNavigationReturn";
 
 export default function ErrorPage() {
   const error = useRouteError() as any;
