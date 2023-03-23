@@ -1,10 +1,11 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import CryptoPage from "./Pages/CryptoPage";
 import ErrorPage from "./Pages/ErrorPage";
 import WalletPage from "./Pages/WalletPage";
 import { Paths } from "./Paths";
 import Layout from "./Components/Layout";
 import PageContainer from "./Components/PageContainer";
+import PageContext from "./Pages/PageContext";
+import CoinPage from "./Pages/CoinPage";
 
 const router = createBrowserRouter([
   {
@@ -17,14 +18,18 @@ const router = createBrowserRouter([
         errorElement: <ErrorPage />
       },
       {
-        path: Paths.Cryptos,
-        element: <PageContainer children={<CryptoPage />} />,
+        path: Paths.Coins,
+        element: <PageContainer children={<CoinPage />} />,
         errorElement: <ErrorPage />,
       }
     ]
   }
 ]);
 
-const AppRouter = () => <RouterProvider router={router} />
+const AppRouter = () => {
+  return <PageContext>
+    <RouterProvider router={router} />
+  </PageContext>
+}
 
 export default AppRouter;

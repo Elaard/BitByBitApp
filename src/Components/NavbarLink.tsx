@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { Paths } from "../Paths";
 import { useIsLinkActive } from "../Utils/Hooks.ts/useIsLinkActive";
 import LinkImage from "./LinkImage";
 import LinkText from "./LinkText";
@@ -10,16 +9,8 @@ interface NavbarLinkProps {
   imageSource: string;
 }
 
-function useActiveLink(path: string) {
-  const isActive = useIsLinkActive(path);
-  if (isActive && path === Paths.Cryptos) {
-    return true;
-  }
-  return isActive;
-}
-
 const NavbarLink = ({ to, title, imageSource }: NavbarLinkProps) => {
-  const isActive = useActiveLink(to);
+  const isActive = useIsLinkActive(to);
 
   const linkClassName = isActive ? "navbar-link link-active" : "navbar-link";
 

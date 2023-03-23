@@ -1,5 +1,5 @@
 export enum Paths {
-  Cryptos = "/",
+  Coins = "/",
   Wallets = "/wallets",
   Etfs = "/etfs",
   Materials = "/materials",

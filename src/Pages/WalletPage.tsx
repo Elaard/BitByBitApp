@@ -1,5 +1,8 @@
+import { useContextProvider } from "./PageContext";
+
 function WalletPage() {
-  return <></>
+  return <>
+  </>
 }
 
 export default WalletPage

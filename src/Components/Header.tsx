@@ -8,12 +8,13 @@ const Header = () => {
     </div>
     <div className="header__text-box">
       <h1 className="heading-primary">
-        <span className="heading-primary--main">The bit by bit project</span>
+        <span className="heading-primary--main">the bit by bit project</span>
       </h1>
     </div>
     <div className="header__title">
       stay up to date with cryptocurrencies
     </div>
+    <button>add wallet</button>
     <NavbarLink key="wallets" to={Paths.Wallets} title={"Wallets"} imageSource={"../icons/wallet-white.svg"} />
   </header>
 

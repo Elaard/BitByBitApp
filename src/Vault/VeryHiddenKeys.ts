@@ -1,0 +1,1 @@
+export const coinApiKey = "coinranking2463ebf1fdfa6126a0b338783371582d65c1d8017d7b6dd4";
