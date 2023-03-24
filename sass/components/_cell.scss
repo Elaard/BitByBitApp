@@ -1,0 +1,16 @@
+.cell {
+  border-top: 1px solid black;
+  padding: 0.5rem 1rem;
+  font-family: initial;
+  &__wrapper {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    font-size: 2rem;
+    font-style: none;
+    p {
+      display: block;
+      margin-left: 5rem;
+    }
+  }
+}

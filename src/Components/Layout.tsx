@@ -1,6 +1,7 @@
 import { Outlet } from "react-router-dom";
 import Header from "./Header";
 import Navbar from "./Navbar";
+import PageContainer from "./PageContainer";
 
 const Layout = () => {
   return <div className="layout">
@@ -9,7 +10,9 @@ const Layout = () => {
       <aside className="layout__aside">
         <Navbar />
       </aside>
-      <Outlet />
+      <PageContainer>
+        <Outlet />
+      </PageContainer>
     </div>
   </div>
 }

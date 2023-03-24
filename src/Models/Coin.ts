@@ -2,6 +2,6 @@ export interface Coin {
   coinrankingUrl: string;
   iconUrl: string;
   name: string;
-  id: string;
+  uuid: string;
   price: string;
 }

@@ -1,20 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 import { useContext } from "react";
 import { CoinList } from "../Models/CoinList";
-import { useCoinsList as useCoinsList } from "../Services/CoinService";
+import { Wallet } from "../Models/Wallet";
+import { useCoinsList } from "../Services/CoinService";
 
 
 interface ContextProviderProps {
-  wallets: any[],
+  wallet: Wallet,
   coinList: CoinList;
+  updateWallet: React.Dispatch<React.SetStateAction<Wallet>>
+}
+
+const standardWallet: Wallet = {
+  coins: {}
 }
 
 const ContextProvider = React.createContext<ContextProviderProps>({
-  wallets: [],
+  wallet: {
+    coins: {}
+  },
   coinList: {
     coins: [],
     stats: {}
-  }
+  },
+  updateWallet: () => null
 });
 
 ContextProvider.displayName = 'ContextProvider';
@@ -28,12 +37,15 @@ interface PageContextProps {
 }
 
 const PageContext = ({ children }: PageContextProps) => {
+  const [wallet, updateWallet] = useState<Wallet>({ ...standardWallet });
+
   const coinList = useCoinsList();
 
   return <ContextProvider.Provider
     value={{
-      wallets: [],
-      coinList: coinList
+      wallet,
+      coinList,
+      updateWallet
     }}>
     {children}
   </ContextProvider.Provider>

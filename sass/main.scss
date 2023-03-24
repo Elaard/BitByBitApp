@@ -8,6 +8,8 @@
 @import "components/navbar-link";
 @import "components/link-image";
 @import "components/link-text";
+@import "components/tfoot";
+@import "components/cell";
 
 @import "layout/navbar";
 @import "layout/header";
@@ -15,3 +17,4 @@
 @import "layout/page-section";
 
 @import "pages/errorPage";
+@import "pages/coin-page";
