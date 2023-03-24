@@ -2,7 +2,6 @@ import {
   createColumnHelper,
   flexRender,
   getCoreRowModel,
-  getFilteredRowModel,
   getPaginationRowModel,
   useReactTable,
 } from '@tanstack/react-table'
@@ -30,20 +29,20 @@ const CoinPage = () => {
 
   const columns = useMemo(() => ([
     columnHelper.accessor('name', {
-      header: () => 'Name',
+      header: () => 'Crypto',
       cell: info => <CellInfo value={info.getValue()} />
     }),
     columnHelper.accessor('price', {
       header: () => 'Price',
-      cell: info => <CellInfo value={parseNumber(info.renderValue() as string, 2)} />
+      cell: info => <CellInfo value={parseNumber(info.getValue() as string, 2)} />
     }),
     columnHelper.accessor('iconUrl', {
       header: () => 'Look',
-      cell: info => <CellInfo value={<img className='table__icon' src={info.renderValue() as string} alt="coin image" />} />
+      cell: info => <CellInfo value={<img className='table__icon' src={info.getValue() as string} alt="coin image" />} />
     }),
     columnHelper.accessor('uuid', {
       header: () => 'Actions',
-      cell: info => <CellInfo value={<ActionButton title={'Add'} cellValue={info.renderValue() as string} action={addCoin} />} />
+      cell: info => <CellInfo value={<ActionButton title={'Add'} cellValue={info.getValue() as string} action={addCoin} />} />
     }),
   ]), [columnHelper, addCoin]);
 
@@ -51,9 +50,9 @@ const CoinPage = () => {
     data: coinList.coins,
     columns,
     getCoreRowModel: getCoreRowModel(),
-    getFilteredRowModel: getFilteredRowModel(),
     getPaginationRowModel: getPaginationRowModel(),
   });
+  console.log(5);
 
   return (
     <div className="coin-page">

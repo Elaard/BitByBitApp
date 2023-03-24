@@ -1,7 +1,7 @@
 import { AssetType } from "../Models/AssetType";
 import { Wallet } from "../Models/Wallet";
 import { WalletActions } from "../Models/WalletActions";
-import { getNumber } from "../Utils/numberUtils";
+import { forceNumber } from "../Utils/numberUtils";
 import { WalletAsset } from "../Models/WalletAsset";
 
 export const WalletActs: WalletActions = {
@@ -17,7 +17,7 @@ export const WalletActs: WalletActions = {
     return {
       [assetType]: {
         ...WalletActs.getAsset(wallet, assetType),
-        [assetId]: getNumber(assetQuantity) + 1,
+        [assetId]: forceNumber(assetQuantity) + 1,
       },
     };
   },

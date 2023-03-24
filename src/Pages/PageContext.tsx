@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useContext } from "react";
-import { AssetEntityBaseModel } from "../Models/AssetentityBaseModel";
+import { AssetEntityBaseModel } from "../Models/AssetEntityBaseModel";
 import { AssetType } from "../Models/AssetType";
 import { CoinList } from "../Models/CoinList";
 import { Wallet } from "../Models/Wallet";

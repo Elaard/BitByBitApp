@@ -7,10 +7,10 @@ interface TablePaginationProps<T> {
 
 function TablePagination<T>({ table }: TablePaginationProps<T>) {
   return <tfoot className="tfoot">
-    <PaginationButton text={"Start"} onClick={() => table.setPageIndex(0)} disabled={!table.getCanPreviousPage()} />
-    <PaginationButton text={"<"} onClick={() => table.previousPage()} disabled={!table.getCanPreviousPage()} />
-    <PaginationButton text={">"} onClick={() => table.nextPage()} disabled={!table.getCanNextPage()} />
-    <PaginationButton text={"End"} onClick={() => table.setPageIndex(table.getPageCount() - 1)} disabled={!table.getCanNextPage()} />
+    <tr><td><PaginationButton text={"Start"} onClick={() => table.setPageIndex(0)} disabled={!table.getCanPreviousPage()} /></td></tr>
+    <tr><td><PaginationButton text={"<"} onClick={() => table.previousPage()} disabled={!table.getCanPreviousPage()} /></td></tr>
+    <tr><td><PaginationButton text={">"} onClick={() => table.nextPage()} disabled={!table.getCanNextPage()} /></td></tr>
+    <tr><td><PaginationButton text={"End"} onClick={() => table.setPageIndex(table.getPageCount() - 1)} disabled={!table.getCanNextPage()} /></td></tr>
   </tfoot>
 }
 

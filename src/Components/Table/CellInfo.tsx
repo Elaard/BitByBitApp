@@ -1,7 +1,7 @@
 import { ReactElement } from "react";
 
 interface CellInfoProps {
-  value: string | ReactElement;
+  value: string | number | null | ReactElement;
 }
 
 const CellInfo = ({ value }: CellInfoProps) => {
