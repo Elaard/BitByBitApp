@@ -15,7 +15,6 @@ export const WalletActs: WalletActions = {
   addAsset: (wallet: Wallet, assetType: AssetType, assetId: string): Wallet => {
     const assetQuantity = WalletActs.getAssetQuantity(wallet, assetType, assetId);
     return {
-      ...{},
       [assetType]: {
         ...WalletActs.getAsset(wallet, assetType),
         [assetId]: getNumber(assetQuantity) + 1,

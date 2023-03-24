@@ -14,7 +14,6 @@ const Header = () => {
     <div className="header__title">
       stay up to date with cryptocurrencies
     </div>
-    <button>add wallet</button>
     <NavbarLink key="wallets" to={Paths.Wallets} title={"Wallets"} imageSource={"../icons/wallet-white.svg"} />
   </header>
 

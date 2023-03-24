@@ -11,10 +11,11 @@ import { useContextProvider } from './PageContext';
 import TablePagination from '../Components/Table/TablePagination';
 import { parseNumber } from '../Utils/numberUtils';
 import CellInfo from '../Components/Table/CellInfo';
-import { memo, useCallback, useMemo } from 'react';
+import { useCallback, useMemo } from 'react';
 import TableBody from '../Components/Table/TableBody';
 import ActionButton from '../Components/Table/ActionButton';
 import { WalletActs } from '../Actions/WalletActions';
+import H2 from '../Components/H2';
 
 const columnHelper = createColumnHelper<Coin>();
 
@@ -26,8 +27,6 @@ const CoinPage = () => {
     const updated = WalletActs.addAsset(wallet, 'coins', assetId);
     updateWallet(updated);
   }, [wallet]);
-
-  console.log(wallet);
 
   const columns = useMemo(() => ([
     columnHelper.accessor('name', {
@@ -58,7 +57,7 @@ const CoinPage = () => {
 
   return (
     <div className="coin-page">
-      <h2 className='text-align-center coin-page__header2'>Coins</h2>
+      <H2 text={'Coins'} />
       <table className="table">
         <thead className='table__thead'>
           {table.getHeaderGroups().map(headerGroup => (
