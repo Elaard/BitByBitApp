@@ -4,7 +4,7 @@ export function parseNumber(number: string, toFixed: number) {
 
 export function forceNumber(number?: number | string | undefined | null) {
   if (typeof number == "string") {
-    return +number;
+    return +number ?? 0;
   }
   return number ?? 0;
 }

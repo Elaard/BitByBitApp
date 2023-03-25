@@ -38,3 +38,22 @@ a {
     background-color: $color-green-dark;
   }
 }
+
+.btn-action {
+  padding: 1rem 1.5rem;
+  &:not(:first-child) {
+    margin-left: 2px;
+  }
+  &--remove {
+    background-color: $color-orange-burnt-sienna;
+    &:hover {
+      background-color: red;
+    }
+  }
+  &--delete {
+    background-color: $color-orange-mahogany;
+    &:hover {
+      background-color: red;
+    }
+  }
+}

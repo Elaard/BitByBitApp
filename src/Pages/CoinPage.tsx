@@ -15,6 +15,7 @@ import TableBody from '../Components/Table/TableBody';
 import ActionButton from '../Components/Table/ActionButton';
 import { WalletActs } from '../Actions/WalletActions';
 import H2 from '../Components/H2';
+import TableHead from '../Components/Table/TableHead';
 
 const columnHelper = createColumnHelper<Coin>();
 
@@ -52,28 +53,12 @@ const CoinPage = () => {
     getCoreRowModel: getCoreRowModel(),
     getPaginationRowModel: getPaginationRowModel(),
   });
-  console.log(5);
 
   return (
     <div className="coin-page">
       <H2 text={'Coins'} />
       <table className="table">
-        <thead className='table__thead'>
-          {table.getHeaderGroups().map(headerGroup => (
-            <tr key={headerGroup.id} className='table__tr'>
-              {headerGroup.headers.map(header => (
-                <th key={header.id}>
-                  {header.isPlaceholder
-                    ? null
-                    : flexRender(
-                      header.column.columnDef.header,
-                      header.getContext()
-                    )}
-                </th>
-              ))}
-            </tr>
-          ))}
-        </thead>
+        <TableHead<Coin> table={table} />
         <TableBody<Coin> table={table} />
         <TablePagination<Coin> table={table} />
       </table>
