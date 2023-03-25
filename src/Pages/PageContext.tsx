@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useContext } from "react";
 import { AssetEntityBaseModel } from "../Models/AssetEntityBaseModel";
 import { AssetType } from "../Models/AssetType";
 import { CoinList } from "../Models/CoinList";
 import { Wallet } from "../Models/Wallet";
 import { useCoinsList } from "../Services/CoinService";
+import { useOnReloadPage } from "../Utils/Hooks.ts/useOnReloadPage";
+import { localStorageUtils } from "../Utils/localStorageUtils";
 
 
 interface ContextProviderProps {
@@ -43,7 +45,20 @@ interface PageContextProps {
 const PageContext = ({ children }: PageContextProps) => {
   const [wallet, updateWallet] = useState<Wallet>({ ...standardWallet });
 
+  useEffect(() => {
+    const savedWallet = localStorageUtils.get<Wallet>('wallet');
+    if (savedWallet) {
+      updateWallet(savedWallet);
+    }
+  }, [])
+
   const coinList = useCoinsList();
+
+  function saveWallet() {
+    localStorageUtils.save('wallet', wallet);
+  }
+
+  useOnReloadPage(saveWallet);
 
   function getAssetData(assetType: AssetType): AssetEntityBaseModel[] {
     switch (assetType) {
