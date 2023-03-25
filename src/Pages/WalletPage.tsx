@@ -135,7 +135,7 @@ function WalletPage() {
 
   return <>
     <H2 text={'Assets'} />
-    <Select onChange={onChange} className='margin-left-3 margin-top-5w select-asset' placeholder={'Select asset'} options={options} value={selectedAsset} />
+    <Select onChange={onChange} className='margin-left-3 margin-top-3w select-asset' placeholder={'Select asset'} options={options} value={selectedAsset} />
     <table className="table">
       <TableHead<AssetEntityDisplayModel> table={table} />
       <TableBody<AssetEntityDisplayModel> table={table} />
